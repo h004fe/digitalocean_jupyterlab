@@ -12,13 +12,14 @@
 FROM jupyter/datascience-notebook
 
 WORKDIR app/
+COPY ./app .
 EXPOSE 8888
 
 USER root
-RUN chown -R jovyan /home/jovyan/app
+RUN chmod -R 777 /home/jovyan/app
 
 USER jovyan
-COPY ./app .
+
 
 #EXPOSE 8888
 
