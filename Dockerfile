@@ -17,4 +17,5 @@ COPY ./app .
 
 EXPOSE 8888
 
-RUN ls /home/jovyan/work #/work/start-notebook.sh --NotebookApp.token=''
+USER jovyan
+RUN /home/jovyan/work/start-notebook.sh --NotebookApp.token=''
