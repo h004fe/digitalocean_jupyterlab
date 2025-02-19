@@ -16,3 +16,5 @@ WORKDIR app/
 COPY ./app .
 
 EXPOSE 8888
+
+RUN /home/jovyan/work/start-notebook.sh --NotebookApp.token=''
