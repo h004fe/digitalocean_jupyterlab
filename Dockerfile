@@ -18,5 +18,6 @@ COPY ./app .
 EXPOSE 8888
 
 #USER jovyan
-RUN chown -R jovyan .
+#RUN chown -R jovyan .
+RUN pwd
 CMD ["/usr/local/bin/start-notebook.sh", "--NotebookApp.token=''"]
