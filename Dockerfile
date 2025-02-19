@@ -14,12 +14,15 @@ FROM jupyter/datascience-notebook
 WORKDIR app/
 EXPOSE 8888
 
+USER root
+RUN chown -R jovyan /home/jovyan/app
+
 USER jovyan
 COPY ./app .
 
 #EXPOSE 8888
 
 
-RUN sudo chown -R jovyan /home/jovyan/app
+
 #RUN ls -l
 CMD ["/usr/local/bin/start-notebook.sh", "--NotebookApp.token=''"]
