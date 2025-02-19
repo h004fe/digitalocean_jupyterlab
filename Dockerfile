@@ -12,12 +12,14 @@
 FROM jupyter/datascience-notebook
 
 WORKDIR app/
-
-COPY ./app .
-
 EXPOSE 8888
 
 USER jovyan
+COPY ./app .
+
+#EXPOSE 8888
+
+
 #RUN chown -R jovyan .
 #RUN ls -l
 CMD ["/usr/local/bin/start-notebook.sh", "--NotebookApp.token=''"]
