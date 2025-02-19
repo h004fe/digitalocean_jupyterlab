@@ -17,7 +17,7 @@ COPY ./app .
 
 EXPOSE 8888
 
-#USER jovyan
+USER jovyan
 #RUN chown -R jovyan .
-RUN ls -l
+#RUN ls -l
 CMD ["/usr/local/bin/start-notebook.sh", "--NotebookApp.token=''"]
